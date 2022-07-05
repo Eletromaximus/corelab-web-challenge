@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import styles from "./Card.module.scss";
+import React, { ReactNode } from 'react'
+import styles from './Card.module.scss'
 
 interface ICard {
   title: string;
@@ -13,7 +13,7 @@ const Card = (props: ICard) => {
 
       <div className={styles.content}>{props.children}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

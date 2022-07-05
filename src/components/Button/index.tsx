@@ -4,7 +4,7 @@ interface IButton {
 }
 
 const Button = (props: IButton) => {
-  return <button onClick={props.onClick}>{props.text}</button>;
-};
+  return <button onClick={props.onClick}>{props.text}</button>
+}
 
-export default Button;
+export default Button

@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
-import { getVehicles } from "../../lib/api";
-import { Button, Card, Search } from "../../components";
-import styles from "./Vehicles.module.scss";
-import { IVehicle } from "../../types/Vehicle";
+import { useEffect, useState } from 'react'
+import { getVehicles } from '../../lib/api'
+import { Button, Card, Search } from '../../components'
+import styles from './Vehicles.module.scss'
+import { IVehicle } from '../../types/Vehicle'
 
-const VehiclesPage = () => {
-  const [vehicles, setVehicles] = useState<IVehicle[]>([]);
-  const [search, setSearch] = useState<string>("");
+function VehiclesPage() {
+  const [vehicles, setVehicles] = useState<IVehicle[]>([])
+  const [search, setSearch] = useState<string>('')
 
   useEffect(() => {
     const fetchVehicles = async () => {
-      const payload = await getVehicles();
-      setVehicles(payload);
-    };
+      const payload = await getVehicles()
+      setVehicles(payload)
+    }
 
-    fetchVehicles();
-  }, []);
+    fetchVehicles()
+  }, [])
 
-  console.log({ vehicles });
+  console.log({ vehicles })
 
   return (
     <div className={styles.Vehicles}>
@@ -33,7 +33,7 @@ const VehiclesPage = () => {
         </Card>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default VehiclesPage;
+export default VehiclesPage
