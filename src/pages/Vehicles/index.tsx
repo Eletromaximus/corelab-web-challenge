@@ -1,30 +1,39 @@
 import { useEffect, useState } from 'react'
 import { getVehicles } from '../../lib/api'
-import { Button, Card, Search } from '../../components'
+import { Button, Card } from '../../components'
 import styles from './Vehicles.module.scss'
 import { IVehicle } from '../../types/Vehicle'
 
-function VehiclesPage() {
+function VehiclesPage () {
   const [vehicles, setVehicles] = useState<IVehicle[]>([])
-  const [search, setSearch] = useState<string>('')
+  // const [search, setSearch] = useState<string>('')
 
   useEffect(() => {
-    const fetchVehicles = async () => {
-      const payload = await getVehicles()
-      setVehicles(payload)
+    const fetchVehicles = () => {
+      const payload = getVehicles()
+      setVehicles(vehicles.splice(0, 1, payload))
     }
 
     fetchVehicles()
   }, [])
 
-  console.log({ vehicles })
-
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
+        {/* <Search placeholder="Search" value={'ola'} /> */}
 
-        <Button text="Add new vehicle" onClick={() => {}} />
+        <Button to="/cadastro">Add new vehicle</Button>
+
+        {vehicles.map(vehicle => {
+          return <Card key={vehicle.id} title={vehicle.name}>
+          <p>
+            Price: {new Intl.NumberFormat('pt-BR',
+            { style: 'currency', currency: 'BRL' }).format(vehicle.price)}
+          </p>
+          <p>Description: {vehicle.description}</p>
+          <p>Year: {vehicle.year}</p>
+        </Card>
+        })}
 
         <Card title="Sandero Stepway">
           <p>Price: 22000</p>
