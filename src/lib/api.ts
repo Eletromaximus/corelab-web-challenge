@@ -20,5 +20,5 @@ export const get = {
   year: 2010,
   color: 'white',
   price: 21000,
-  createdAt: new Date()
+  createdAt: new Date(),
 }

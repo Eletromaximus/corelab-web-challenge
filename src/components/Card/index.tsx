@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react'
 import styles from './Card.module.scss'
 
 interface ICard {
-  title: string;
-  children: ReactNode;
+  title: string
+  children: ReactNode
 }
 
 const Card = (props: ICard) => {
