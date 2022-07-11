@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Cadastro } from './pages/Cadatro'
+import { Cadastro } from './pages/Cadastro'
 import VehiclesPage from './pages/Vehicles'
 
 export function App() {
