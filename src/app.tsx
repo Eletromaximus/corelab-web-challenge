@@ -6,7 +6,9 @@ export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<VehiclesPage />} />
+        <Route path="/vehicles" element={<VehiclesPage />}>
+          <Route path=":page" element={<VehiclesPage />} />
+        </Route>
         <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,7 @@
 ## Corelab Challenge
 
+## Status do projeto: Pausado
+
 Welcome to the **Corelab Challenge**! Here you'll show us how awesome you are at coding.
 In order to do that, we've prepared two repositories which you will fork and program.
 
